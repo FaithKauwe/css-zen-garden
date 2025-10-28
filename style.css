@@ -55,22 +55,26 @@ h3 {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Link Styles - Autumn Theme */
+/* Link Styles - Autumn Theme with Flame Rise Effect */
 a:link { 
 	font-weight: 600; 
 	text-decoration: none; 
 	color: var(--bright-red);
 	transition: all 0.3s ease;
+	display: inline-block;
 }
 a:visited { 
 	font-weight: 600; 
 	text-decoration: none; 
 	color: var(--burgundy);
+	transition: all 0.3s ease;
+	display: inline-block;
 }
 a:hover, a:focus, a:active { 
 	text-decoration: underline; 
 	color: var(--bright-gold);
-	text-shadow: 0 0 8px var(--bright-gold);
+	text-shadow: 0 0 12px var(--bright-gold), 0 0 20px var(--orange);
+	transform: translateY(-2px);
 }
 abbr {
 	border-bottom: none;
