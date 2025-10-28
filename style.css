@@ -80,9 +80,26 @@ abbr {
 /* Layout Structure */
 .page-wrapper { 
 	background: none;
-	padding: 0 175px 0 110px;  
+	padding: 0 300px 0 110px;  
 	margin: 0; 
 	position: relative;
+}
+
+.page-wrapper::before {
+	content: '';
+	/* position fixed allows the background image to stay while the page scrolls up or down, 
+	essentially allowing it to move with the scrolling
+	position: absolute would keep the image anchored in one position, eg the bottom corner */
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 500px;
+	height: 700px;
+	background: url('assets/viktoria-kalashnikova-JRiKafpsjmk-unsplash.jpg') no-repeat bottom left;
+	background-size: contain;
+	opacity: 0.36;
+	pointer-events: none;
+	z-index: 1;
 }
 
 .intro { 
@@ -156,13 +173,17 @@ footer a:link, footer a:visited {
 .sidebar .wrapper { 
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
-	background: rgba(6, 7, 30, 0.8);
+	background: linear-gradient(135deg, rgba(6, 7, 30, 0.95) 0%, rgba(55, 6, 23, 0.95) 100%);
 	border: 2px solid var(--orange-red);
 	border-radius: 8px;
 	padding: 20px; 
 	margin-top: 150px; 
 	width: 200px;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+	box-shadow: 
+		0 0 20px rgba(220, 47, 2, 0.4),
+		0 0 40px rgba(232, 93, 4, 0.3),
+		0 0 60px rgba(244, 140, 6, 0.2),
+		0 4px 15px rgba(0, 0, 0, 0.7);
 }
 .sidebar h3.select,
 .sidebar h3.archives,
